@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="manifest" href="manifest.json">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	</head>
+	<body>
+		<script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('sw.js')
+                .then(
+                    function(registration){
+                        alert('Reg. satisfactorio del sw');
+                        console.log('Reg. satisfactorio del sw en el ámbito: ',
+                                    registration.scope);
+                    }
+                ).catch(
+                    function(err){
+                        alert('El SW no se registró');
+                        console.log('El SW no se registró', err);
+                    }
+                );
+            }
+        </script>
+
+		<br>
+		a: <input type="text" id="txta">
+		b: <input type="text" id="txtb">
+		c: <input type="text" id="txtc">
+		<br>
+		<br>
+		d: <input type="text" id="txtd">
+		e: <input type="text" id="txte">
+		f: <input type="text" id="txtf">
+		<br>
+		<br>
+		
+		x1: <input type="text" id="txtx1"> 
+		x2: <input type="text" id="txtx2"> 
+		<br>
+		<br>
+		x3: <input type="text" id="txtx3">
+		x4: <input type="text" id="txtx4">
+		<br>
+		<br>
+		<input type="submit" id="btnCalcular">
+		<button type="submit" id="btnClean">Limpia</button>
+		<br>
+		<br>
+		<div id="res">
+		</div>
+		<div id="res2"></div>
+		<div id="res3"></div>
+		<canvas 
+            id="canvas" 
+            width="800" 
+            height="400">
+        </canvas>
+		<script src="algo.js"></script>
+	</body>
+</html>
